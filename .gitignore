@@ -1,0 +1,27 @@
+# ---- 编译产物 ----
+output/
+*.obj
+*.res
+*.exp
+*.lib
+*.dll
+*.exe
+*.pdb
+*.ilk
+
+# ---- 日志 ----
+log.txt
+*.log
+
+# ---- IDE / 编辑器 ----
+.vs/
+.vscode/
+*.user
+*.suo
+*.sln
+*.vcxproj*
+
+# ---- 系统文件 ----
+Thumbs.db
+desktop.ini
+.DS_Store
