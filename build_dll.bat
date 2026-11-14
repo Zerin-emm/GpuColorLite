@@ -60,6 +60,9 @@ if errorlevel 1 (
 )
 
 REM ---- Step 2: build DLL ----
+REM Remove stale import library so it always carries the current timestamp
+REM (MSVC incremental linking keeps the old .lib when the export table is unchanged)
+del /q "%OUT%\GpuColorLite.lib" 2>nul
 echo [2/4] Compiling GpuColorLite.dll...
 cl /nologo /EHsc /std:c++17 /utf-8 /DUNICODE /D_UNICODE /D_WIN32_WINNT=0x0A00 /DGPUCOLORLITE_BUILD_DLL /LD /MT /O2 /W3 /I"%CXXWINRT%" /Fo"%OUT%\\" GpuColorLite.cpp "%OUT%\app.res" /Fe:"%OUT%\GpuColorLite.dll" /link /DLL /SUBSYSTEM:WINDOWS user32.lib gdi32.lib ole32.lib oleaut32.lib shell32.lib advapi32.lib d2d1.lib dwrite.lib windowscodecs.lib dwmapi.lib psapi.lib windowsapp.lib
 if errorlevel 1 (
