@@ -1556,7 +1556,7 @@ namespace MainWindow
 
         // ---- 布局 ----
         D2D1_RECT_F HexRowRect()          { return Util::Rect(452, 54, 110, 32, g_scale); }
-        D2D1_RECT_F RgbRowRect(int index) { return Util::Rect(452, 114 + index * 60, 110, 32, g_scale); }
+        D2D1_RECT_F RgbRowRect(int index) { return Util::Rect(452.0f, 114.0f + index * 60.0f, 110.0f, 32.0f, g_scale); }
         float RgbRowCenterY(int index)    { return 130.0f + index * 60.0f; }
         D2D1_RECT_F PreviewRect()         { return Util::Rect(452, 294, 110, 32, g_scale); }
 
